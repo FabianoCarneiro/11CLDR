@@ -45,7 +45,7 @@ jobs:
         run: snyk auth ${{ secrets.SNYK_TOKEN }}
       
       - name: Snyk Code test
-        run: snyk code test --sarif-file-output=snyk-code.sarif
+        run: snyk code test --sarif-file-output=snyk-code.sarif --debug
         #run: snyk code test --severity-threshold=low --sarif-file-output=snyk-code.sarif
           
       - name: Run Snyk to check for vulnerabilities
