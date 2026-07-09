@@ -163,7 +163,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     environment:
       name: AZURE-PRO
-      url: devopsfiap-on-app-dng3eyhzemanafb9.chilecentral-01.azurewebsites.net
+      url: devopsfiap-on-app-dng3eyhzemanafb9.chilecentral-01.azurewebsites.net/devops
     steps:
       - name: Download JAR
         uses: actions/download-artifact@v4
