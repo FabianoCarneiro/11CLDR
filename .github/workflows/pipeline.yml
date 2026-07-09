@@ -49,8 +49,8 @@ jobs:
       - name: Snyk Code test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        run: snyk code test --sarif-file-output=snyk-code.sarif
-        #run: snyk code test --severity-threshold=low --sarif-file-output=snyk-code.sarif
+        #run: snyk code test --sarif-file-output=snyk-code.sarif
+        run: snyk code test --severity-threshold=low --sarif-file-output=snyk-code.sarif
           
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/maven@master
