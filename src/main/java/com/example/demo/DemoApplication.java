@@ -15,61 +15,58 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
 
-	}
-       
-	@GetMapping("/")
-        public String healthCheck(){
-                return "HEALTH CHECK OK!";
-        }
+    @GetMapping("/")
+    public String healthCheck() {
+        return "HEALTH CHECK OK!";
+    }
 
-	@GetMapping("/secured")
-	public Object secured(@LoggedInUser AppUser appUser){
-		return appUser.getUser();
-	}
+    @GetMapping("/secured")
+    public Object secured(@LoggedInUser AppUser appUser) {
+        return appUser.getUser();
+    }
 
-	@GetMapping("/secured-admin")
-	@PreAuthorize("hasRole('ROLE_admin')")
-	public String securedAdmin(){
-		return "Only admin can see  this";
-	}
-	
-	@GetMapping("/public")
-	public String pub(){
-		
-		return "This is public endpoint";
-	}
+    @GetMapping("/secured-admin")
+    @PreAuthorize("hasRole('ROLE_admin')")
+    public String securedAdmin() {
+        return "Only admin can see this";
+    }
 
-	@GetMapping("/what-is-the-time")
-	String time(){
-		return new Date().toString();
-	}
-	
-	@GetMapping("/devops")
-	String turma(){
-		return "Zumbi";
-	}
-	
-	@GetMapping("/autoglass")
-	String autoglass(){
-		return "https://www.autoglassonline.com.br/";
-	}
-	
-	@GetMapping("/9CLDR")
-	String cldr(){
-		return "Turma 9 MBA Cloud";
-	}
+    @GetMapping("/public")
+    public String pub() {
+        return "This is public endpoint";
+    }
 
-	@GetMapping("/7DVPR")
-	String DVP7(){
-		return "Turma 7 MBA DEVOPS";
-	}
-	
-	@GetMapping("/11CLDR")
-	String 11CLDR(){
-		return "DEVOPS CI/CD";
-	}
-	
-}	
+    @GetMapping("/what-is-the-time")
+    public String time() {
+        return new Date().toString();
+    }
+
+    @GetMapping("/devops")
+    public String turma() {
+        return "Zumbi";
+    }
+
+    @GetMapping("/autoglass")
+    public String autoglass() {
+        return "https://www.autoglassonline.com.br/";
+    }
+
+    @GetMapping("/9CLDR")
+    public String cldr() {
+        return "Turma 9 MBA Cloud";
+    }
+
+    @GetMapping("/7DVPR")
+    public String dvp7() {
+        return "Turma 7 MBA DEVOPS";
+    }
+
+    @GetMapping("/11CLDR")
+    public String CLDR11() {
+        return "DEVOPS CI/CD";
+    }
+}
