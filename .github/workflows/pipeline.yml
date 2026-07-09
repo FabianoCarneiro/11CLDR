@@ -218,12 +218,12 @@ jobs:
       url: https://devopsfiap-on-app.azurewebsites.net/
     steps:
       - name: Download JAR
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: artifact
           path: target/
       - name: DeployAzure
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v2.2.19
         with:
           app-name: FiapApp
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
