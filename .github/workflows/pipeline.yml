@@ -166,7 +166,7 @@ jobs:
       url: devopsfiap-on-app-dng3eyhzemanafb9.chilecentral-01.azurewebsites.net
     steps:
       - name: Download JAR
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: artifact
           path: target/
