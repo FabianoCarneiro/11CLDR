@@ -67,9 +67,9 @@ public class DemoApplication {
 		return "Turma 7 MBA DEVOPS";
 	}
 	
-	@GetMapping("/UFSCAR")
-	String UFSCAR(){
-		return "Turma UFSCAR 2026";
+	@GetMapping("/11CLDR")
+	String 11CLDR(){
+		return "DEVOPS CI/CD";
 	}
 	
 }	
